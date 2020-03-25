@@ -10,7 +10,7 @@
         "email": "nivanka@silverstripers.com"
     }],
     "require": {
-        "silverstripe/framework": "4.1.x-dev",
+        "silverstripe/framework": "^4",
         "cebe/markdown": "1.1.2"
     },
     "autoload": {
