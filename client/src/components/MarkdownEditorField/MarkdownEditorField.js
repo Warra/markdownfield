@@ -93,7 +93,8 @@ class MarkdownEditorField extends React.Component {
                     keyMap      : "sublime",
                     toolbar     : this.props.toolbar,
                     previewRender: this.previewRender,
-                    identifier  : this.props.identifier
+                    identifier  : this.props.identifier,
+                    showIcons: ["code", "table"],
                 }}
             ></ReactSimpleMDE>
         </div>);
