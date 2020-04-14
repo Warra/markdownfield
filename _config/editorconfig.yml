@@ -46,6 +46,11 @@ SilverStripers\markdown\forms\MarkdownEditorConfig:
           className: 'fa fa-link'
           title: 'Create Link'
       -
+          name: table
+          action: drawTable
+          className: 'fa fa-table'
+          title: 'Insert Table'
+      -
           name: embed
           action: ssEmbed
           className: 'fa fa-play'
