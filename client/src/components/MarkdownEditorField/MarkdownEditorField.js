@@ -108,7 +108,7 @@ jQuery.entwine('ss', ($) => {
 
 
     MarkdownEditorField.addCustomAction('ssEmbed', function(editor){
-        if(window.InsertMediaModal) {
+        if(window.InsertEmbedModal) {
             let dialog = $('#insert-md-embed-react__dialog-wrapper');
             if (!dialog.length) {
                 dialog = $('<div id="insert-md-embed-react__dialog-wrapper" />');

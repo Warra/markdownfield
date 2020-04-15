@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { ApolloProvider } from 'react-apollo';
 import { loadComponent } from 'lib/Injector';
 import InsertEmbedModal from 'containers/InsertEmbedModal/InsertEmbedModal';
-const InjectableInsertMediaModal = loadComponent(InsertEmbedModal);
+const InjectableInsertEmbedModal = loadComponent(InsertEmbedModal);
 
 jQuery.entwine('ss', ($) => {
 
