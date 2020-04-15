@@ -1,28 +1,35 @@
+
 import jQuery from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import { ApolloProvider } from 'react-apollo';
-import { loadComponent } from 'lib/Injector';
-const InsertEmbedModal = window.InsertEmbedModal ? provideInjector(window.InsertEmbedModal.default) : null;
-const InjectableInsertEmbedModal = loadComponent(InsertEmbedModal);
+import { provideInjector } from 'lib/Injector';
+const InjectableInsertEmbedModal = window.InsertEmbedModal ? provideInjector(window.InsertEmbedModal.default) : null;
 
 jQuery.entwine('ss', ($) => {
 
     $('#insert-md-embed-react__dialog-wrapper').entwine({
 
         Element: null,
+
         Data: {},
+
         onunmatch() {
             // solves errors given by ReactDOM "no matched root found" error.
             this._clearModal();
         },
+
         _clearModal() {
             ReactDOM.unmountComponentAtNode(this[0]);
         },
+
         open() {
             this._renderModal(true);
         },
+
         close() {
+            this.setData({});
             this._renderModal(false);
         },
 
@@ -38,27 +45,25 @@ jQuery.entwine('ss', ($) => {
             }
             const handleHide = () => this.close();
             const handleInsert = (...args) => this._handleInsert(...args);
+            const handleCreate = (...args) => this._handleCreate(...args);
+            const handleLoadingError = (...args) => this._handleLoadingError(...args);
             const store = window.ss.store;
             const client = window.ss.apolloClient;
             const attrs = this.getOriginalAttributes();
 
-            delete attrs.url;
-
             // create/update the react component
             ReactDOM.render(
             <ApolloProvider store={store} client={client}>
-                    <InjectableInsertEmbedModal
-                        isOpen={isOpen}
-                        title={false}
-                        type="insert-embed"
-                        onInsert={handleInsert}
-                        onCreate={handleCreate}
-                        onClosed={handleHide}
-                        bodyClassName="modal__dialog modal__dialog--scrollable"
-                        className="insert-embed-react__dialog-wrapper"
-                        requireLinkText={false}
-                        fileAttributes={attrs}
-                    />
+                <InjectableInsertEmbedModal
+                    isOpen={isOpen}
+                    onCreate={handleCreate}
+                    onInsert={handleInsert}
+                    onHide={handleHide}
+                    onLoadingError={handleLoadingError}
+                    fileAttributes={attrs}
+                    bodyClassName="modal__dialog modal__dialog--scrollable"
+                    className="insert-embed-react__dialog-wrapper"
+                />
                 </ApolloProvider>,
                 this[0]
         );
