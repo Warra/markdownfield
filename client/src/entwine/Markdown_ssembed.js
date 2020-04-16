@@ -2,6 +2,7 @@
 import jQuery from 'jquery';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import tinymce from 'tinymce';
 import { loadComponent } from 'lib/Injector';
 import ShortcodeSerialiser, { sanitiseShortCodeProperties } from 'lib/ShortcodeSerialiser';
 import InsertEmbedModal from '../components/InsertEmbedModal/InsertEmbedModal';
