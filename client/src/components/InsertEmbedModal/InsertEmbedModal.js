@@ -37,6 +37,7 @@ class InsertEmbedModal extends Component {
    * @param {object} props
    */
   setOverrides(props) {
+    console.log(props, "OVERRIDE PROPS")
     if (this.props.schemaUrl !== props.schemaUrl) {
       this.clearOverrides();
     }
@@ -120,7 +121,7 @@ class InsertEmbedModal extends Component {
       }
       case 'action_insertmedia': {
         const data = this.props.onInsert(data);
-        console.log(data);
+        console.log(data,"insert");
         this.props.onInsert(data);
         break;
       }
