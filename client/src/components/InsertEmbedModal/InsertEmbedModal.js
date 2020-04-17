@@ -12,7 +12,7 @@ const sectionConfigKey = 'SilverStripe\\AssetAdmin\\Controller\\AssetAdmin';
 class InsertEmbedModal extends Component {
   constructor(props) {
     super(props);
-
+    console.log(props);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -37,7 +37,6 @@ class InsertEmbedModal extends Component {
    * @param {object} props
    */
   setOverrides(props) {
-    console.log(props, "OVERRIDE PROPS")
     if (this.props.schemaUrl !== props.schemaUrl) {
       this.clearOverrides();
     }
@@ -120,8 +119,6 @@ class InsertEmbedModal extends Component {
         break;
       }
       case 'action_insertmedia': {
-        const data = this.props.onInsert(data);
-        console.log(data,"insert");
         this.props.onInsert(data);
         break;
       }
@@ -173,9 +170,6 @@ InsertEmbedModal.defaultProps = {
 
 function mapStateToProps(state, ownProps) {
   const sectionConfig = state.config.sections.find((section) => section.name === sectionConfigKey);
-
-  // console.log(state, "STATE");
-  console.log(sectionConfig, "SECTIONS")
 
   // get the schemaUrl to use as a key for overrides
   const targetUrl = ownProps.fileAttributes ? ownProps.fileAttributes.Url : '';

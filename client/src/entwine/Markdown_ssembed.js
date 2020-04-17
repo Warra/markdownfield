@@ -59,7 +59,8 @@ jQuery.entwine('ss', ($) => {
                     isOpen={isOpen}
                     onCreate={handleCreate}
                     onInsert={handleInsert}
-                    onClosed={handleHide}
+                    onHide={handleHide}
+                    onLoadingError={handleLoadingError}
                     fileAttributes={attrs}
                     bodyClassName="modal__dialog modal__dialog--scrollable"
                     className="insert-embed-react__dialog-wrapper"
@@ -82,7 +83,6 @@ jQuery.entwine('ss', ($) => {
          * @private
          */
         _handleInsert(data) {
-            console.log(data, "INSERT DATA");
             const oldData = this.getData();
             this.setData(Object.assign({ Url: oldData.Url }, data));
             this.insertRemote();
@@ -131,8 +131,12 @@ jQuery.entwine('ss', ($) => {
             }
 
             const data = this.getData();
-
-            let shortcode = `[![${data.Url}](${data.PreviewUrl})](${data.Url} "${data.Url}")`;
+            let shortcode = '[embed ' +
+                'url="' + data.Url + '" ' +
+                'thumbnail="' + data.PreviewUrl + '" ' +
+                'width="' + data.Width + '" ' +
+                'height="' + data.Height + '" ' +
+                ']';
             
             let pos = $field.codemirror.getCursor();
             $field.codemirror.setSelection(pos, pos);
@@ -152,3 +156,7 @@ jQuery.entwine('ss', ($) => {
     });
 
 });
+
+
+
+
