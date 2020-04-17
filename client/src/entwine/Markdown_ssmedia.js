@@ -194,7 +194,7 @@ jQuery.entwine('ss', ($) => {
             const extraData = this.getExtraData();
             // extraData.CaptionText
 
-            let markdown = `![${data.alt || data.title}](${data.url} "${data.title}")  ${extraData.CaptionText}`;
+            let markdown = `![${data.alt || data.title}](${data.url} "${data.title}")${extraData.CaptionText && `  ${extraData.CaptionText}`}`;
 
             let pos = $field.codemirror.getCursor();
             $field.codemirror.setSelection(pos, pos);
