@@ -62,7 +62,8 @@ class InsertEmbedModal extends Component {
    * @returns {object}
    */
   getModalProps() {
-    console.log(this.props)
+    console.log(i18n._t('AssetAdmin.EditTitle', 'Media from the web'))
+    console.log(this.props, "PROPS")
     const props = Object.assign(
       {
         onSubmit: this.handleSubmit,
@@ -170,8 +171,6 @@ InsertEmbedModal.defaultProps = {
 };
 
 function mapStateToProps(state, ownProps) {
-  console.log(state);
-  console.log(ownProps);
   const sectionConfig = state.config.sections.find((section) => section.name === sectionConfigKey);
 
   // get the schemaUrl to use as a key for overrides
