@@ -192,11 +192,13 @@ jQuery.entwine('ss', ($) => {
             }
             const data = this.getData();
             const extraData = this.getExtraData();
-            let markdown = '!['
-                + (extraData.CaptionText ? extraData.CaptionText : data.title)
-                + ']([image_link id=' + data.ID +' width=' + data.InsertWidth + ' height=' + data.InsertHeight + ' url=\''+ data.url +'\'] "'
-                + data.title
-                + '")';
+            // let markdown = '!['
+            //     + (extraData.CaptionText ? extraData.CaptionText : data.title)
+            //     + ']([image_link id=' + data.ID +' width=' + data.InsertWidth + ' height=' + data.InsertHeight + ' url=\''+ data.url +'\'] "'
+            //     + data.title
+            //     + '")';
+
+            let markdown = `![${extraData.CaptionText ? extraData.CaptionText : data.title}](${data.url} "${data.title}")${data.ID && `{:#${data.ID}}`}`;
 
             let pos = $field.codemirror.getCursor();
             $field.codemirror.setSelection(pos, pos);
