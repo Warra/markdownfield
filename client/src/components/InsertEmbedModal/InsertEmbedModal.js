@@ -115,11 +115,13 @@ class InsertEmbedModal extends Component {
   handleSubmit(data, action) {
     switch (action) {
       case 'action_addmedia': {
+        console.log(data);
         this.props.onCreate(data);
         break;
       }
       case 'action_insertmedia': {
         this.props.onInsert(data);
+        console.log(data);
         break;
       }
       case 'action_cancel': {
