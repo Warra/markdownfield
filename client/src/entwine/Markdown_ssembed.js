@@ -53,8 +53,6 @@ jQuery.entwine('ss', ($) => {
             const attrs = this.getOriginalAttributes();
 
             // create/update the react component
-            console.log(attrs, "ATT")
-            console.log(window.ss)
             ReactDOM.render(
             <ApolloProvider store={store} client={client}>
                 <InjectableInsertEmbedModal
@@ -92,6 +90,7 @@ jQuery.entwine('ss', ($) => {
         },
 
         _handleCreate(data) {
+            console.log(data, "CREATE")
             this.setData(Object.assign({}, this.getData(), data));
             this.open();
         },
