@@ -130,12 +130,15 @@ jQuery.entwine('ss', ($) => {
             }
 
             const data = this.getData();
+            console.log(data);
             let shortcode = '[embed ' +
                 'url="' + data.Url + '" ' +
                 'thumbnail="' + data.PreviewUrl + '" ' +
                 'width="' + data.Width + '" ' +
                 'height="' + data.Height + '" ' +
                 ']';
+
+            // let shortcode = [![IMAGE ALT TEXT](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE "Video Title")
             
             let pos = $field.codemirror.getCursor();
             $field.codemirror.setSelection(pos, pos);
