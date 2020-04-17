@@ -86,6 +86,8 @@ jQuery.entwine('ss', ($) => {
             const oldData = this.getData();
             this.setData(Object.assign({ Url: oldData.Url }, data));
             this.insertRemote();
+            const datainsert = this.insertRemote();
+            console.log(datainsert)
             this.close();
         },
 
