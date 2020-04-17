@@ -53,6 +53,7 @@ jQuery.entwine('ss', ($) => {
             const attrs = this.getOriginalAttributes();
 
             // create/update the react component
+            console.log(window.ss)
             ReactDOM.render(
             <ApolloProvider store={store} client={client}>
                 <InjectableInsertEmbedModal
@@ -131,7 +132,7 @@ jQuery.entwine('ss', ($) => {
             }
 
             const data = this.getData();
-            console.log($field)
+
             var shortcode = '[![' + data.Url + '](' + data.PreviewUrl + ')](' + data.Url + ' "' + data.Url + '")';
             
             let pos = $field.codemirror.getCursor();
