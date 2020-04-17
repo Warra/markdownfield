@@ -86,8 +86,6 @@ jQuery.entwine('ss', ($) => {
             const oldData = this.getData();
             this.setData(Object.assign({ Url: oldData.Url }, data));
             this.insertRemote();
-            const datainsert = this.insertRemote();
-            console.log(datainsert)
             this.close();
         },
 
@@ -133,12 +131,8 @@ jQuery.entwine('ss', ($) => {
             }
 
             const data = this.getData();
-            let shortcode = '[embed ' +
-                'url="' + data.Url + '" ' +
-                'thumbnail="' + data.PreviewUrl + '" ' +
-                'width="' + data.Width + '" ' +
-                'height="' + data.Height + '" ' +
-                ']';
+            console.log($field)
+            var shortcode = '[![' + data.Url + '](' + data.PreviewUrl + ')](' + data.Url + ' "' + data.Url + '")';
             
             let pos = $field.codemirror.getCursor();
             $field.codemirror.setSelection(pos, pos);
