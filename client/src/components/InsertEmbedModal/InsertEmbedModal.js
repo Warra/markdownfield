@@ -173,7 +173,8 @@ InsertEmbedModal.defaultProps = {
 function mapStateToProps(state, ownProps) {
   const sectionConfig = state.config.sections.find((section) => section.name === sectionConfigKey);
 
-  console.log(state, "STATE");
+  // console.log(state, "STATE");
+  console.log(sectionConfig, "SECTIONS")
 
   // get the schemaUrl to use as a key for overrides
   const targetUrl = ownProps.fileAttributes ? ownProps.fileAttributes.Url : '';
