@@ -192,8 +192,9 @@ jQuery.entwine('ss', ($) => {
             }
             const data = this.getData();
             const extraData = this.getExtraData();
+            // extraData.CaptionText
 
-            let markdown = `![${extraData.CaptionText ? extraData.CaptionText : data.title}](${data.url} "${data.title}")`;
+            let markdown = `![${data.alt || data.title}](${data.url} "${data.title}")  ${extraData.CaptionText}`;
 
             let pos = $field.codemirror.getCursor();
             $field.codemirror.setSelection(pos, pos);
