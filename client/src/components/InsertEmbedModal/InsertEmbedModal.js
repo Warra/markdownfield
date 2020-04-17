@@ -115,13 +115,11 @@ class InsertEmbedModal extends Component {
   handleSubmit(data, action) {
     switch (action) {
       case 'action_addmedia': {
-        console.log(data);
         this.props.onCreate(data);
         break;
       }
       case 'action_insertmedia': {
         this.props.onInsert(data);
-        console.log(data);
         break;
       }
       case 'action_cancel': {
@@ -171,6 +169,8 @@ InsertEmbedModal.defaultProps = {
 };
 
 function mapStateToProps(state, ownProps) {
+  console.log(state);
+  console.log(ownProps);
   const sectionConfig = state.config.sections.find((section) => section.name === sectionConfigKey);
 
   // get the schemaUrl to use as a key for overrides
