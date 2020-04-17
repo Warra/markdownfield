@@ -53,6 +53,7 @@ jQuery.entwine('ss', ($) => {
             const attrs = this.getOriginalAttributes();
 
             // create/update the react component
+            console.log(attrs, "ATT")
             console.log(window.ss)
             ReactDOM.render(
             <ApolloProvider store={store} client={client}>
@@ -60,7 +61,7 @@ jQuery.entwine('ss', ($) => {
                     isOpen={isOpen}
                     onCreate={handleCreate}
                     onInsert={handleInsert}
-                    onHide={handleHide}
+                    onClosed={handleHide}
                     onLoadingError={handleLoadingError}
                     fileAttributes={attrs}
                     bodyClassName="modal__dialog modal__dialog--scrollable"
