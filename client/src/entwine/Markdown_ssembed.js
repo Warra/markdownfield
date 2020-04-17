@@ -51,10 +51,7 @@ jQuery.entwine('ss', ($) => {
             const store = window.ss.store;
             const client = window.ss.apolloClient;
             const attrs = this.getOriginalAttributes();
-            
-            console.log(client)
-            console.log(store)
-            console.log(attrs)
+
             // create/update the react component
             ReactDOM.render(
             <ApolloProvider store={store} client={client}>

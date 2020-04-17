@@ -135,6 +135,8 @@ class InsertEmbedModal extends Component {
   }
 
   render() {
+    const testdata = this.getModalProps();
+    console.log(testdata);
     return <FormBuilderModal {...this.getModalProps()} />;
   }
 }
@@ -169,8 +171,6 @@ InsertEmbedModal.defaultProps = {
 };
 
 function mapStateToProps(state, ownProps) {
-  console.log(state);
-  console.log(ownProps);
   const sectionConfig = state.config.sections.find((section) => section.name === sectionConfigKey);
 
   // get the schemaUrl to use as a key for overrides
