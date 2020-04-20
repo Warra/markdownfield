@@ -90,7 +90,6 @@ jQuery.entwine('ss', ($) => {
         },
 
         _handleCreate(data) {
-            console.log(this);
             this.setData(Object.assign({}, this.getData(), data));
             this.open();
         },
