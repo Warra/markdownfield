@@ -137,10 +137,10 @@ jQuery.entwine('ss', ($) => {
                 var json = null;
                 $.ajax({
                     'crossOrigin': true,
-                    'async': false,
-                    'global': false,
+                    // 'async': false,
+                    // 'global': false,
                     'url': youTubeURL,
-                    'dataType': "json",
+                    'dataType': "jsonp",
                     'success': function(data) {
                         json = data;
                     }
