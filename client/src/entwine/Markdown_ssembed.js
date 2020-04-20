@@ -140,7 +140,7 @@ jQuery.entwine('ss', ($) => {
                     // 'async': false,
                     // 'global': false,
                     'url': youTubeURL,
-                    'dataType': "jsonp",
+                    'dataType': "json",
                     'success': function(data) {
                         json = data;
                     }
