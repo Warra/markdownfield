@@ -132,7 +132,7 @@ jQuery.entwine('ss', ($) => {
 
             const data = this.getData();
 
-            var youTubeURL = 'http://gdata.youtube.com/feeds/api/videos/oHg5SJYRHA0?v=2&alt=json';
+            var youTubeURL = 'http://www.youtube.com/oembed?url=http%3A//youtube.com/watch%3Fv%3DM3r2XDceM6A&format=json';
             var json = (function() {
                 var json = null;
                 $.ajax({
