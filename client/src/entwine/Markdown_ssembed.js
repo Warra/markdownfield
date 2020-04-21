@@ -133,10 +133,8 @@ jQuery.entwine('ss', ($) => {
 
             const data = this.getData();
 
-            var youTubeURL = 'http://www.youtube.com/oembed?url=http%3A//youtube.com/watch%3Fv%3DM3r2XDceM6A&format=json';
-
-            const response = await axios.get('http://www.youtube.com/oembed?url=http%3A//youtube.com/watch%3Fv%3DM3r2XDceM6A&format=json');
-
+            const response = await axios.get(`http://www.youtube.com/oembed?url=${data.Url}&format=json`);
+            console.log(data);
             console.log(response);
 
             var shortcode = '[![' + data.Url + '](' + data.PreviewUrl + ')](' + data.Url + ' "' + data.Url + '")';
