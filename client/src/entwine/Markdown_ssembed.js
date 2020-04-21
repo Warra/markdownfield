@@ -132,10 +132,7 @@ jQuery.entwine('ss', ($) => {
             }
 
             const data = this.getData();
-
             const response = await axios.get(`http://www.youtube.com/oembed?url=${data.Url}&format=json`);
-            console.log(data);
-            console.log(response);
 
             var shortcode = '[![' + response.data.title + '](' + data.PreviewUrl + ')](' + data.Url + ' "' + response.data.title + '")';
             
@@ -147,8 +144,7 @@ jQuery.entwine('ss', ($) => {
         },
 
 
-        updateTextarea()
-        {
+        updateTextarea() {
             const $field = this.getElement();
             $($field.element).closest('.js-markdown-holder')
                 .find('textarea.markdowneditor').val($field.value());
