@@ -40,22 +40,39 @@ const config = {
         extensions: ["", ".webpack.js", ".jsx", ".js"]
     },*/
 
+    // module: {
+    //     loaders: [
+    //         {
+    //             test: /\.jsx?$/,
+    //             exclude: /node_modules/,
+    //             loader: 'babel-loader'
+    //         }
+    //     ]
+    // },
     module: {
-        loaders: [
+        rules: [
             {
-                test: /\.jsx?$/,
-                exclude: /node_modules/,
-                loader: 'babel-loader'
+            test: /\.m?js$/,
+            exclude: /(node_modules|bower_components)/,
+            use: {
+                loader: 'babel-loader',
+                options: {
+                    presets: [
+                        '@babel/preset-env',
+                        '@babel/preset-react'
+                    ]
+                }
+            }
             }
         ]
     },
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        })
-    ]
+    // plugins: [
+    //     new webpack.optimize.UglifyJsPlugin({
+    //         compress: {
+    //             warnings: false
+    //         }
+    //     })
+    // ]
 };
 
 //module.exports = config;

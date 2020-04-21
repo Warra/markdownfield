@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom';
 import { ApolloProvider } from 'react-apollo';
 import { loadComponent } from 'lib/Injector';
 import InsertEmbedModal from '../components/InsertEmbedModal/InsertEmbedModal';
+import axios from 'axios';
 const InjectableInsertEmbedModal = loadComponent(InsertEmbedModal);
 
 jQuery.entwine('ss', ($) => {
@@ -124,7 +125,7 @@ jQuery.entwine('ss', ($) => {
             ));
         },
 
-        insertRemote() {
+        async insertRemote() {
             const $field = this.getElement();
             if (!$field) {
                 return false;
@@ -133,23 +134,10 @@ jQuery.entwine('ss', ($) => {
             const data = this.getData();
 
             var youTubeURL = 'http://www.youtube.com/oembed?url=http%3A//youtube.com/watch%3Fv%3DM3r2XDceM6A&format=json';
-            var json = (function() {
-                var json = null;
-                $.ajax({
-                    'crossOrigin': true,
-                    // 'async': false,
-                    // 'global': false,
-                    'url': youTubeURL,
-                    'dataType': "json",
-                    'success': function(data) {
-                        json = data;
-                        console.log(data)
-                    }
-                });
-                return json;
-            })();
 
-            console.log(json)
+            const response = await axios.get('http://www.youtube.com/oembed?url=http%3A//youtube.com/watch%3Fv%3DM3r2XDceM6A&format=json');
+
+            console.log(response);
 
             var shortcode = '[![' + data.Url + '](' + data.PreviewUrl + ')](' + data.Url + ' "' + data.Url + '")';
             

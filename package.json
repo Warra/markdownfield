@@ -20,31 +20,30 @@
   "author": "SilverStripers",
   "license": "BSD-3-Clause",
   "babel": {
-    "presets": [
-      "es2015",
-      "react"
-    ],
     "plugins": [
-      "transform-object-rest-spread"
+      "@babel/plugin-proposal-object-rest-spread",
+      "@babel/plugin-proposal-class-properties"
     ]
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "bootstrap": "4.0.0-beta",
     "jquery": "^3.1.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-simplemde-editor": "3.6.11",
-    "bootstrap": "4.0.0-beta",
     "util": "0.10.3"
   },
   "devDependencies": {
-    "@silverstripe/webpack-config": "0.3.0",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.9.5",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/register": "^7.9.0",
+    "@silverstripe/webpack-config": "^1.4.0",
     "@types/node": "^12.0.2",
-    "babel-loader": "^6.2.4",
-    "babel-plugin-transform-object-rest-spread": "^6.20.2",
-    "babel-polyfill": "^6.9.1",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.16.0",
-    "babel-register": "^6.9.0",
+    "babel-loader": "^8.1.0",
     "concurrently": "2.2.0",
     "css-loader": "^0.28.1",
     "dateformat": "^2.0.0",
@@ -65,10 +64,10 @@
     "react-router-redux": "^4.0.7",
     "react-select": "^1.0.0-rc.3",
     "redux": "^3.6.0",
+    "regenerator-runtime": "^0.13.5",
     "style-loader": "^0.17.0",
     "ts-loader": "^0.8.2",
     "typescript": "^1.8.10",
-    "webpack": "^1.13.1",
-    "webpack-stream": "^3.2.0"
+    "webpack-cli": "^3.3.11"
   }
 }
