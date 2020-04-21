@@ -137,7 +137,7 @@ jQuery.entwine('ss', ($) => {
             console.log(data);
             console.log(response);
 
-            var shortcode = '[![' + response.data.title + '](' + data.PreviewUrl + ')](' + data.Url + ' "' + data.Url + '")';
+            var shortcode = '[![' + response.data.title + '](' + data.PreviewUrl + ')](' + data.Url + ' "' + response.data.title + '")';
             
             let pos = $field.codemirror.getCursor();
             $field.codemirror.setSelection(pos, pos);
