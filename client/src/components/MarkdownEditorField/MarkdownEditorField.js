@@ -63,7 +63,6 @@ class MarkdownEditorField extends React.Component {
         super(props);
         this.state = ss.markdownConfigs;
         this.id = id++;
-        console.log(this.id, id)
     }
 
     handleChange(value) {
@@ -100,7 +99,7 @@ class MarkdownEditorField extends React.Component {
                     showIcons: ["code", "table"],
                     autosave: {
                         enabled: true,
-                        uniqueId: this.id,
+                        uniqueId: String(this.id),
                         delay: 100,
                     }
                 }}
