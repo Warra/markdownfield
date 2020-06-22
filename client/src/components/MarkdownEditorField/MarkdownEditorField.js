@@ -63,6 +63,7 @@ class MarkdownEditorField extends React.Component {
         super(props);
         this.state = ss.markdownConfigs;
         this.id = id++;
+        console.log(this.id, id)
     }
 
     handleChange(value) {
