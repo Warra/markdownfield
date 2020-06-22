@@ -97,11 +97,12 @@ class MarkdownEditorField extends React.Component {
                     previewRender: this.previewRender,
                     identifier  : this.props.identifier,
                     showIcons: ["code", "table"],
-                    autosave: {
-                        enabled: true,
-                        uniqueId: `id-${this.id}`,
-                        delay: 100,
-                    }
+                    // autosave: {
+                    //     enabled: true,
+                    //     uniqueId: `id-${this.id}`,
+                    //     delay: 100,
+                    // },
+                    forceSync: true
                 }}
             ></ReactSimpleMDE>
         </div>);
