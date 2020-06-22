@@ -99,7 +99,7 @@ class MarkdownEditorField extends React.Component {
                     showIcons: ["code", "table"],
                     autosave: {
                         enabled: true,
-                        uniqueId: String(this.id),
+                        uniqueId: `id-${this.id}`,
                         delay: 100,
                     }
                 }}
