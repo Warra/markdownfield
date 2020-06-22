@@ -56,11 +56,13 @@ parser.registerShortCode('embed', function(buffer, opts) {
     return '<img src="' + opts.thumbnail + '" width="' + opts.width + '" height="' + opts.height + '">';
 });
 
+let id = 0;
 
 class MarkdownEditorField extends React.Component {
     constructor(props) {
         super(props);
         this.state = ss.markdownConfigs;
+        this.id = id++;
     }
 
     handleChange(value) {
@@ -83,7 +85,6 @@ class MarkdownEditorField extends React.Component {
     }
 
     render() {
-        const { id } = this.props
         return (<div className="editor-container">
             <ReactSimpleMDE
                 value = {this.props.textarea.value}
@@ -98,7 +99,7 @@ class MarkdownEditorField extends React.Component {
                     showIcons: ["code", "table"],
                     autosave: {
                         enabled: true,
-                        uniqueId: id,
+                        uniqueId: this.id,
                         delay: 100,
                     }
                 }}
