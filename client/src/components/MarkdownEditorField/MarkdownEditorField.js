@@ -83,6 +83,7 @@ class MarkdownEditorField extends React.Component {
     }
 
     render() {
+        const { id } = this.props
         return (<div className="editor-container">
             <ReactSimpleMDE
                 value = {this.props.textarea.value}
