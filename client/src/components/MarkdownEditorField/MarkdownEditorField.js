@@ -66,8 +66,8 @@ class MarkdownEditorField extends React.Component {
     }
 
     handleChange(value) {
-        console.log(value)
         this.props.textarea.value = value;
+        this.setState({ value: value })
     }
 
     previewRender(plainText, preview){
