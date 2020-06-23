@@ -63,11 +63,12 @@ class MarkdownEditorField extends React.Component {
         super(props);
         this.state = ss.markdownConfigs;
         this.id = id++;
+        this.handleChange = this.handleChange.bind(this)
     }
 
-    handleChange(value) {
-        this.props.textarea.value = value;
-        this.setState({ value: value })
+    handleChange(e) {
+        console.log(e.target.value)
+        this.props.textarea.value = e.target.value;
     }
 
     previewRender(plainText, preview){
@@ -89,7 +90,7 @@ class MarkdownEditorField extends React.Component {
         return (<div className="editor-container">
             <ReactSimpleMDE
                 value = {this.props.textarea.value}
-                onChange={this.handleChange.bind(this)}
+                onChange={this.handleChange}
                 options={{
                     spellChecker: true,
                     dragDrop    : false,
