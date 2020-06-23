@@ -91,7 +91,7 @@ class MarkdownEditorField extends React.Component {
                 value = {this.props.textarea.value}
                 onChange={this.handleChange}
                 options={{
-                    spellChecker: true,
+                    spellChecker: false,
                     dragDrop    : false,
                     keyMap      : "sublime",
                     toolbar     : this.props.toolbar,
